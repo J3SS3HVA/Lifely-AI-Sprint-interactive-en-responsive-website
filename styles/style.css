@@ -1,0 +1,71 @@
+:root{
+    --grey--99: #3C3B34;
+    --grey--70: #9B9A92;
+    --grey--50: #C6C5BD;
+    --grey--20: #EAEAE6;
+    --Background--grey: #F6F6F4;
+    --Accent--red: #FF6B6B;
+}
+
+@font-face {
+    font-family: Mainbold;
+    src: url(assets/fonts/AktivGrotesk_Bd.ttf);
+ }
+ 
+ @font-face {
+    font-family: Mainlight;
+    src: url(assets/fonts/AktivGrotesk_Lt.ttf);
+ }
+  
+ @font-face {
+    font-family: Mainmedium;
+    src: url(assets/fonts/AktivGrotesk_Md.ttf);
+ }
+
+ @font-face {
+    font-family: Mainregular;
+    src: url(assets/fonts/AktivGrotesk_Rg.ttf);
+ }
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper{
+    padding: 0 4.5em;
+}
+
+.main-line {
+    position: absolute;
+    top: 0;
+    left: 24px;
+    z-index: 10;
+    height: 100%;
+    border-left: 1px solid hsla(53,7%,76%,.5);
+}
+
+a{
+    color: var(--Accent--red);
+    text-decoration: none;
+}
+
+form {
+    width: min-content;
+    margin: auto;
+}
+
+._2eZHnh_PMhyzt7w_zi7 {
+    overflow: hidden;
+    background-color: transparent;
+}
+
+
+
+@media (min-width:45em) {
+    
+}
+
+@media (min-width:50em) {
+    
+}
