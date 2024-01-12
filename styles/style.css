@@ -6,6 +6,11 @@
     --grey--20: #EAEAE6;
     --Background--grey: #F6F6F4;
     --Accent--red: #FF6B6B;
+    --standard--line-height: 1.5;
+    --spacing--sections: 2.5em 0 2.5em 0;
+    --spacing--bottom: 2.5em 0 0 0;
+    --spacing--sides: 0 4.5em;
+    
 }
 
 *{
@@ -16,7 +21,7 @@
 
 body{
     font-family: 'Aktiv Grotesk Regular', sans-serif;
-    line-height: 1.5;
+    line-height: var(--standard--line-height);
 }
 
 h1{
@@ -51,6 +56,7 @@ nav{
     width: 100%;
     height: 3em;
     overflow: hidden;
+    border-bottom: solid var(--grey--99);
     
 }
 
@@ -76,12 +82,12 @@ nav div{
 }
 
 .wrapper{
-    padding: 0 4.5em;
+    padding: var(--spacing--sides);
     padding-top: 2.5em;
 }
 
 .main-line {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 65px;
     z-index: 10;
@@ -94,21 +100,33 @@ nav div{
 a{
     color: var(--Accent--red);
     text-decoration: none;
+    font-size: 0.8em;
 }
 
 li{
     list-style-type: none;
 }
 
+section{
+    margin: var(--spacing--sections);
+}
+
 .Starting{
-    margin: 2.5em 0 2.5em 0;
+   
 }
 
 .Starting-Secondary{
-    margin: 2.5em 0 2.5em 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 1.2em;
+}
+
+#Schedule-button{
+    background-color: var(--Accent--red);
+    color: var(--grey--20);
+    border-radius: 5px;
+    padding: 1em 2.5em;
 }
 
 .Schedule{
@@ -118,6 +136,7 @@ li{
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: solid var(--Accent--red);
 }
 
 .Schedule-Primary{
@@ -133,6 +152,15 @@ form {
 ._2eZHnh_PMhyzt7w_zi7 {
     overflow: hidden;
     background-color: transparent;
+}
+
+footer{
+    background-color: var(--grey--99);
+    color: var(--grey--20);
+}
+
+.end-footer{
+    margin: var(--spacing--bottom);
 }
 
 
@@ -179,6 +207,7 @@ form {
     }
     form{
         margin: 0;
+        scale: 0.8;
     }
 
     h1{
@@ -226,5 +255,7 @@ form {
     span{
         font-size: 1.2em;
     }
-
+    form{
+        scale: 1;
+    };
 }
