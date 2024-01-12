@@ -12,7 +12,7 @@
     --spacing--sides: 0 4.5em;
     
 }
-
+/* general styling */
 *{
     margin: 0;
     padding: 0;
@@ -46,9 +46,24 @@ span{
     font-size: 0.8em;
 }
 
+a{
+    color: var(--Accent--red);
+    text-decoration: none;
+    font-size: 0.8em;
+}
+
+li{
+    list-style-type: none;
+}
+
+section{
+    margin: var(--spacing--sections);
+}
+/* navigation */
 nav{
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: var(--Background--grey);
     background-color: var(--Accent--red);
     z-index: 20;
@@ -65,13 +80,6 @@ nav img{
     height: 20px;
 }
 
-nav + span{
-    white-space: nowrap;
-    overflow: hidden;
-    padding: 0 3px;
-
-}
-
 nav a{
     color: var(--grey--20);
 }
@@ -80,7 +88,37 @@ nav div{
     display: flex;
     max-width: 100%;
 }
+nav span {
+    display: inline-block;
+}
 
+nav div:nth-child(1){
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 0 0 0 1em;
+}
+
+nav div:nth-child(1) span:nth-child(4){
+    display: block; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+nav div:nth-child(2){
+    gap: 0.5em;
+    white-space: nowrap;
+    margin: 0 0 0 1em;
+    padding: 0 1em 0 0;
+}
+
+nav div:nth-child(2) span a[href="contact"]{
+    background-color: var(--Background--grey);
+    color: var(--grey--99);
+    border: var(--grey--99) solid;
+    padding: 0.4em 0.6em;
+    font-weight: bold;   
+}
+/* main */
 .wrapper{
     padding: var(--spacing--sides);
     padding-top: 2.5em;
@@ -95,21 +133,6 @@ nav div{
     border-left: 1px solid hsla(53,7%,76%,.5);
 }
 
-
-
-a{
-    color: var(--Accent--red);
-    text-decoration: none;
-    font-size: 0.8em;
-}
-
-li{
-    list-style-type: none;
-}
-
-section{
-    margin: var(--spacing--sections);
-}
 
 .Starting{
    
@@ -127,6 +150,7 @@ section{
     color: var(--grey--20);
     border-radius: 5px;
     padding: 1em 2.5em;
+    text-align: center;
 }
 
 .Schedule{
@@ -146,13 +170,21 @@ section{
 form {
     width: min-content;
     margin: auto;
-    scale: 0.7;
+    scale: 0.5;
 }
 
-._2eZHnh_PMhyzt7w_zi7 {
-    overflow: hidden;
-    background-color: transparent;
+main section:nth-child(3){
+    display: flex;
+    flex-wrap: wrap;
+    background-color: var(--grey--20);
+    
 }
+
+main section:nth-child(4){
+    display: flex;
+    flex-wrap: wrap;
+}
+/* end main */
 
 footer{
     background-color: var(--grey--99);
@@ -198,7 +230,7 @@ footer{
         align-items: center;
         justify-content: center;
     }
-    }
+    
     .Schedule-Secondary{
         display: flex;
     flex-direction: column;
@@ -231,7 +263,7 @@ footer{
     span{
         font-size: 1em;
     }
-
+}
 
 @media (min-width:76.875em) {
     h1{
