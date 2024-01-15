@@ -9,7 +9,7 @@
     --standard--line-height: 1.5;
     --spacing--sections: 2.5em 0 2.5em 0;
     --spacing--bottom: 2.5em 0 0 0;
-    --spacing--sides: 0 4.5em;
+    --spacing--sides: 0 1em;
     
 }
 /* general styling */
@@ -36,6 +36,10 @@ h2{
 
 h3{
     font-size: 1em;
+}
+
+h4{
+    font-size: 0.9em;
 }
 
 p{
@@ -124,15 +128,17 @@ nav div:nth-child(2) span a[href="contact"]{
     font-weight: bold;   
 }
 /* main */
-.wrapper{
-    padding: var(--spacing--sides);
+main, footer{
+    padding: 1em;
     padding-top: 2.5em;
+    max-width: 30em;
+    margin: 0 auto;
 }
 
 .main-line {
     position: fixed;
     top: 0;
-    left: 65px;
+    left: 10px;
     z-index: 10;
     height: 100%;
     border-left: 1px solid hsla(53,7%,76%,.5);
@@ -194,6 +200,49 @@ main section:nth-child(4){
     display: flex;
     flex-wrap: wrap;
 }
+
+main section:nth-child(4) h2{
+    font-family: 'Playfair Display', serif;
+    color: var(--grey--50);
+
+}
+
+
+main section:nth-child(4) ol li span{
+    font-size: 1.2em;
+    text-align: center;
+    width: 100%;
+
+}
+
+main section:nth-child(4) h3{
+    text-align: center;
+}
+
+main section:nth-child(4) h4{
+    text-align: center;
+}
+
+
+main section:nth-child(4) ol li{
+    margin: 1em 0;
+
+}
+
+main section:nth-child(5) h2{
+    font-family: 'Playfair Display', serif;
+    color: var(--grey--50);
+
+}
+
+main section:nth-child(5) span{
+    font-size: 1.2em;
+}
+
+main section:nth-child(6) h2{
+    font-family: 'Playfair Display', serif;
+    color: var(--grey--50);
+}
 /* end main */
 
 footer{
@@ -207,6 +256,8 @@ footer{
 
 
 /* bigger formats */
+
+/*
 
 @media (min-width:30em) {
     form{
@@ -271,6 +322,10 @@ footer{
     h3{
         font-size: 1.2em;
     }
+
+    h4{
+        font-size: 1.1em;
+    }
     
     p{
         font-size: 1em;
@@ -307,3 +362,4 @@ footer{
         scale: 1;
     };
 }
+*/
