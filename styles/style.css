@@ -10,8 +10,27 @@
     --spacing--sections: 2.5em 0 2.5em 0;
     --spacing--bottom: 2.5em 0 0 0;
     --spacing--sides: 0 1em;
+    --background--padding: 1.5em;
     
 }
+
+@font-face {
+    font-family: 'Aktiv-Lt';
+    src: url(../assets/fonts/AktivGrotesk_Lt.ttf);
+}
+@font-face {
+    font-family: 'Aktiv-Rg';
+    src: url(../assets/fonts/AktivGrotesk_Rg.ttf);
+}
+@font-face {
+    font-family: 'Aktiv-Md';
+    src: url(../assets/fonts/AktivGrotesk_Md.ttf);
+}
+@font-face {
+    font-family: 'Aktiv-Bd';
+    src: url(../assets/fonts/AktivGrotesk_Bd.ttf);
+}
+
 /* general styling */
 *{
     margin: 0;
@@ -20,8 +39,9 @@
 }
 
 body{
-    font-family: 'Aktiv Grotesk Regular', sans-serif;
+    font-family: 'Aktiv-Rg', sans-serif;
     line-height: var(--standard--line-height);
+    position: relative;
 }
 
 h1{
@@ -67,12 +87,12 @@ span li a{
 section{
     margin: var(--spacing--sections);
 }
+/* end main styling */
 /* navigation */
 nav{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--Background--grey);
     background-color: var(--Accent--red);
     z-index: 20;
     position: fixed;
@@ -136,7 +156,7 @@ main, footer{
 }
 
 .main-line {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 10px;
     z-index: 10;
@@ -144,15 +164,14 @@ main, footer{
     border-left: 1px solid hsla(53,7%,76%,.5);
 }
 
-
-.Starting{
-   
+.Starting-Primary h1{
+    margin-bottom: 1.2em;
 }
 
 .Starting-Secondary{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1.2em;
 }
 
@@ -173,12 +192,12 @@ main, footer{
     align-items: center;
     border: solid var(--Accent--red);
     opacity: 1;
+    padding: var(--background--padding);
 }
 
 /* main section:nth-child(2){
     opacity: 0;
 } */
-
 .Schedule-Primary{
     text-align: center;
 }
@@ -186,13 +205,15 @@ main, footer{
 form {
     width: min-content;
     margin: auto;
-    scale: 0.5;
+    scale: 0.7;
 }
 
 main section:nth-child(3){
     display: flex;
     flex-wrap: wrap;
     background-color: var(--grey--20);
+    padding: var(--background--padding);
+    gap: 1.2em;
     
 }
 
@@ -207,6 +228,9 @@ main section:nth-child(4) h2{
 
 }
 
+.active{
+    color: var(--Accent--red);
+}
 
 main section:nth-child(4) ol li span{
     font-size: 1.2em;
@@ -229,20 +253,101 @@ main section:nth-child(4) ol li{
 
 }
 
+main section:nth-child(4) ol::before{
+    position: sticky;
+    top: 30%;
+    content: "";
+    display: block;
+    float: left;
+    width: 1px;
+    height: 100px;
+    margin: -20px 0 20px;
+    padding: 20px 0;
+    box-sizing: content-box;
+    transform: translate(-6px,40px);
+    background-image: linear-gradient(180deg,hsla(0,0%,100%,0),#3c3b34 9.38%,#3c3b34 86.46%,hsla(0,0%,100%,0));
+    transition: height .1s ease-out;
+
+}
+
+main section:nth-child(5){
+    overflow: hidden;
+}
+
+main section:nth-child(5) article{
+    display: flex;
+}
+
+
 main section:nth-child(5) h2{
     font-family: 'Playfair Display', serif;
     color: var(--grey--50);
+    z-index: 1;
+    grid-area: title;
+
+}
+
+main section:nth-child(5) h3{
+    z-index: 1;
+
+}
+
+main section:nth-child(5) a{
+    z-index: 1;
 
 }
 
 main section:nth-child(5) span{
     font-size: 1.2em;
+    z-index: 1;
+}
+
+main section:nth-child(5) div{
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    width: 50%;
+}
+
+main section:nth-child(5) div img{
+    z-index: 0;
+}
+
+main section:nth-child(6){
+    background-color: var(--grey--20);
+    margin: 0;
 }
 
 main section:nth-child(6) h2{
     font-family: 'Playfair Display', serif;
-    color: var(--grey--50);
+    color: var(--grey--70);
 }
+
+main section:nth-child(6) div{
+    padding: var(--background--padding);
+}
+
+main section:nth-child(6) div:last-child{
+    background-color: var(--Accent--red);
+    padding: var(--background--padding);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5em;
+}
+
+main section:nth-child(6) div:last-child h2{
+    color: var(--grey--20);
+}
+
+main section:nth-child(6) div:last-child a{
+    background-color: var(--grey--20);
+    border: solid var(--grey--99);
+    color: var(--grey--99);
+    padding: 1em 2em;
+    font-family: 'Aktiv-Bd';
+}
+
 /* end main */
 
 footer{
