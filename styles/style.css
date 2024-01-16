@@ -195,15 +195,30 @@ main, footer{
     padding: var(--background--padding);
 }
 
+.Schedule p{
+    word-wrap: break-word;
+    width: 15em;
+    margin: auto
+}
+
 /* main section:nth-child(2){
     opacity: 0;
 } */
 .Schedule-Primary{
     text-align: center;
+    display: contents;
+}
+
+.Schedule-Primary h2{
+   font-family: 'Playfair Display', serif;
+}
+
+.Schedule-Secondary{
+    text-align: center; 
 }
 
 form {
-    width: min-content;
+   
     margin: auto;
     scale: 0.7;
 }
