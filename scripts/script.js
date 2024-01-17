@@ -1,7 +1,7 @@
- 
-// const scheduleButton = document.querySelector('#Schedule-button');
+// show schedule section
+const Schedule = document.querySelector('.Schedule');
+const ScheduleBtn = document.querySelector('#Schedule-button');
 
-// scheduleButton.addEventListener('click', function(){
-//     const scheduleSection = document.querySelector('main section:nth-child(2)');
-//     scheduleSection.classList.toggle('show-Schedule');
-// });
+ScheduleBtn.addEventListener('click', function(){
+    Schedule.classList.toggle('show-schdule');
+});
