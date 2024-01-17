@@ -102,6 +102,7 @@ nav{
     height: 3em;
     overflow: hidden;
     border-bottom: solid var(--grey--99);
+    position: relative;
     
 }
 
@@ -149,10 +150,10 @@ nav div:nth-child(2) span a[href="contact"]{
     padding: 0.4em 0.6em;
     font-weight: bold;   
 }
+
 /* main */
 main, footer{
     padding: 1em;
-    padding-top: 2.5em;
     max-width: 30em;
     margin: 0 auto;
 }
@@ -171,7 +172,6 @@ main, footer{
     z-index: 1;
     position: relative;
     margin: 0;
-    padding: var(--spacing--sections);
 }
 
 .Starting-Primary h1{
@@ -205,6 +205,7 @@ main, footer{
     transform: translateY(-1500px);
     transition: 2s cubic-bezier(0, 0.91, 1, 1);
     position: absolute;
+    z-index: -1;
 }
 
 .show-schdule{
@@ -218,6 +219,7 @@ main, footer{
 @keyframes planning {
     0%{
         transform: scale(0.9);
+        z-index: -1;
     }
     50%{
         transform: scale(1.05);
@@ -338,39 +340,66 @@ main section:nth-child(5) h2{
 
 main section:nth-child(5) h3{
     z-index: 1;
-
+    color: var(--Background--grey);
 }
 
 main section:nth-child(5) a{
     z-index: 1;
-
 }
 
 main section:nth-child(5) span{
     font-size: 1.2em;
     z-index: 1;
+    color: var(--Background--grey);
+    text-shadow: 0.2px 0.2px 0 #FF6B6B;
+    
 }
 
-main section:nth-child(5) div{
+main section:nth-child(5) div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
+
+main section:nth-child(5) div:first-child {
+    position: relative;
     display: flex;
     flex-direction: column;
     z-index: 1;
-    width: 50%;
     background-image: url('../assets/images/DSF8566.jpg');
     background-size: cover;
+    font-family: 'Aktiv-Bd', sans-serif;
+    justify-content: space-evenly;
+    height: 300px;
 }
 
+main section:nth-child(5) div:last-child::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+    z-index: -1; 
+}
 
-main section:nth-child(5) div:last-child{
+main section:nth-child(5) div:last-child {
+    position: relative;
     display: flex;
     flex-direction: column;
     z-index: 1;
-    width: 50%;
     background-image: url('../assets/images/DSF8997.jpg');
     background-size: cover;
+    font-family: 'Aktiv-Bd', sans-serif;
+    justify-content: space-evenly;
+    height: 300px;
 }
-
-
 
 main section:nth-child(6){
     background-color: var(--grey--20);
@@ -412,6 +441,7 @@ main section:nth-child(6) div:last-child a{
 footer{
     background-color: var(--grey--99);
     color: var(--grey--20);
+    padding-top: 2.5em;
 }
 
 footer li span a{
