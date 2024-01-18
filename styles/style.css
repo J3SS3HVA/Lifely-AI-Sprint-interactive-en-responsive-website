@@ -8,8 +8,9 @@
     --Accent--red: #FF6B6B;
     --standard--line-height: 1.5;
     --spacing--sections: 2.5em 0 2.5em 0;
-    --spacing--bottom: 2.5em 0 0 0;
-    --spacing--sides: 0 1em;
+    --spacing--top: 2.5em 0 0 0;
+    --spacing--bottom: 0 0 2.5em 0;
+    --spacing--sides: 1em 4.5em;
     --background--padding: 1.5em;
     
 }
@@ -48,7 +49,52 @@ h1{
     font-size: 1.5em;
     font-family: 'Playfair Display', serif;
     color: var(--grey--50);
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
 }
+
+h1 span{
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+    color: var(--grey--50);
+    display: inline-block;
+  opacity: 0;
+  filter: blur(4px);
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1 span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+h1 span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+h1 span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+h1 span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+h1 span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 
 h2{
     font-size: 1.2em;
@@ -102,14 +148,13 @@ nav{
     height: 3em;
     overflow: hidden;
     border-bottom: solid var(--grey--99);
-    position: relative;
-    
 }
 
 nav img{
     width: 34px; 
     height: 20px;
     margin: auto;
+    margin-right: 1em;
 }
 
 nav a{
@@ -139,7 +184,7 @@ nav div:nth-child(1) span:nth-child(4){
 nav div:nth-child(2){
     gap: 0.5em;
     white-space: nowrap;
-    margin: 0 0 0 1em;
+    margin: 0 1em 0 1em;
     padding: 0 1em 0 0;
 }
 
@@ -169,9 +214,12 @@ main, footer{
 
 .Starting{
     background-color: white;
-    z-index: 1;
     position: relative;
-    margin: 0;
+    margin: var(--spacing--top);
+}
+
+.Starting-Primary{
+    margin: var(--spacing--bottom);
 }
 
 .Starting-Primary h1{
@@ -194,18 +242,31 @@ main, footer{
 }
 
 .Schedule{
-    background-color: var(--grey--99);
-    color: var(--grey--20);
+    color: var(--grey--50);
     margin: 0 0 2.5em 0;
     display: flex;
     flex-direction: column;
-    border: solid var(--Accent--red);
+    align-content: center;
+    align-items: center;
     opacity: 1;
     padding: var(--background--padding);
-    transform: translateY(-1500px);
+    transform: translateY(-1600px);
     transition: 2s cubic-bezier(0, 0.91, 1, 1);
     position: absolute;
     z-index: -1;
+}
+
+.Schedule-Primary img{
+    display: none;
+}
+
+.Schedule h2{
+    font-family: 'Playfair Display', serif;
+}
+
+.Schedule span,
+.Schedule p{
+    color: var(--grey--99);
 }
 
 .show-schdule{
@@ -242,11 +303,6 @@ main, footer{
 } */
 .Schedule-Primary{
     text-align: center;
-    display: contents;
-}
-
-.Schedule-Primary h2{
-   font-family: 'Playfair Display', serif;
 }
 
 .Schedule-Secondary{
@@ -256,7 +312,7 @@ main, footer{
 form {
    
     margin: auto;
-    scale: 0.7;
+    scale: 1;
 }
 
 main section:nth-child(3){
@@ -327,6 +383,7 @@ main section:nth-child(5){
 
 main section:nth-child(5) article{
     display: flex;
+    gap: 1em;
 }
 
 
@@ -341,6 +398,8 @@ main section:nth-child(5) h2{
 main section:nth-child(5) h3{
     z-index: 1;
     color: var(--Background--grey);
+    word-break: break-word;
+    width: 10em;
 }
 
 main section:nth-child(5) a{
@@ -376,6 +435,7 @@ main section:nth-child(5) div:first-child {
     font-family: 'Aktiv-Bd', sans-serif;
     justify-content: space-evenly;
     height: 300px;
+    padding: var(--spacing--sides);
 }
 
 main section:nth-child(5) div:last-child::before {
@@ -399,6 +459,7 @@ main section:nth-child(5) div:last-child {
     font-family: 'Aktiv-Bd', sans-serif;
     justify-content: space-evenly;
     height: 300px;
+    padding: var(--spacing--sides);
 }
 
 main section:nth-child(6){
@@ -449,21 +510,71 @@ footer li span a{
 }
 
 .end-footer{
-    margin: var(--spacing--bottom);
+    margin: var(--spacing--top);
 }
 
 
 /* bigger formats */
 
-/*
+
 
 @media (min-width:30em) {
-    form{
-        scale: 0.6;
+    
+    main, footer{
+        padding: 1em;
+        max-width: 100%;
+        padding:var(--spacing--sides);
+    }
+
+    .Starting-Secondary{
+        padding: var(--spacing--bottom);
+    }
+
+    main section:nth-child(4){
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+    }
+
+    main section:nth-child(4) h2 {
+        font-family: 'Playfair Display', serif;
+        color: var(--grey--50);
+        text-align: center;
+    }
+    section:nth-child(4) p{
+        word-wrap: break-word;
+        width: 30em
+    }
+
+    main section:nth-child(5) div:first-child{
+        width: 100%;
+    }
+
+    main section:nth-child(5) div:last-child {
+        width: 100%;
+    }
+
+    main section:nth-child(5) article{
+        display: flex;
+        width: 100%
+    }
+
+    main section:nth-child(6){
+        display: flex;
+    }
+
+    main section:nth-child(6) div{
+        width: 50%;
     }
 }
 
 @media (min-width:50em) {
+    main, footer{
+        padding: 1em;
+        max-width: 100%;
+        padding: 1em 4.5em;
+    }
+    
     .Starting{
         display: flex;
         flex-direction: row;
@@ -485,17 +596,24 @@ footer li span a{
     }
     .Schedule{
         display: flex;
-        flex-direction: row;
-
-    }
-    .Schedule-Primary{
-        display: flex;
         flex-direction: column;
-        width: 50%;
-        align-items: center;
-        justify-content: center;
     }
     
+    .Schedule-content{
+        display: flex;
+        width: 100%;
+    }
+    .Schedule-Primary{
+        display: block;
+        width: 50%;
+        margin: auto;
+    }
+    
+    .Schedule-Primary img{
+        display: block;
+        margin: auto;
+    }
+
     .Schedule-Secondary{
         display: flex;
     flex-direction: column;
@@ -507,8 +625,8 @@ footer li span a{
         scale: 0.8;
     }
 
-    h1{
-        font-size: 2em;
+    h1 span{
+        font-size: 1.8em;
         font-family: 'Playfair Display', serif;
         color: var(--grey--50);
     }
@@ -532,10 +650,22 @@ footer li span a{
     span{
         font-size: 1em;
     }
+
+    section:nth-child(4) p{
+        word-wrap: break-word;
+        width: 30em
+    }
 }
 
 @media (min-width:76.875em) {
-    h1{
+
+    main, footer{
+        padding: 1em;
+        max-width: 100%;
+        padding: 1em 7.5em;
+    }
+
+    h1 span{
         font-size: 2.2em;
         font-family: 'Playfair Display', serif;
         color: var(--grey--50);
@@ -559,5 +689,20 @@ footer li span a{
     form{
         scale: 1;
     };
+
+    .Starting-Primary h2,
+    .Starting-Primary p{
+        word-wrap: break-word;
+        width: 15em
+    }
+
+    .Schedule-Primary{
+        display: block;
+        margin: auto;
+    }
+
+    section:nth-child(4) p{
+        word-wrap: break-word;
+        width: 30em
+    }
 }
-*/
