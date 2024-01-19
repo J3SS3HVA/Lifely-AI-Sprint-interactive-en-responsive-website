@@ -216,6 +216,7 @@ main, footer{
     background-color: white;
     position: relative;
     margin: var(--spacing--top);
+    z-index: 1;
 }
 
 .Starting-Primary{
@@ -253,7 +254,7 @@ main, footer{
     transform: translateY(-1600px);
     transition: 2s cubic-bezier(0, 0.91, 1, 1);
     position: absolute;
-    z-index: -1;
+    z-index: 0;
 }
 
 .Schedule-Primary img{
