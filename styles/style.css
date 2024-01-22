@@ -32,6 +32,11 @@
     src: url(../assets/fonts/AktivGrotesk_Bd.ttf);
 }
 
+@font-face {
+    font-family: 'playfair-RG';
+    src: url(../assets/fonts/PlayfairDisplay-R.ttf);
+}
+
 /* general styling*/
 *{
     margin: 0;
@@ -47,7 +52,7 @@ body{
 
 h1{
     font-size: 1.5em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'playfair-RG', serif;
     color: var(--grey--50);
     transform: scale(0.94);
     animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
@@ -55,7 +60,7 @@ h1{
 
 h1 span{
     font-size: 1.5em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'playfair-RG', serif;
     color: var(--grey--50);
     display: inline-block;
   opacity: 0;
@@ -188,7 +193,7 @@ nav div:nth-child(2){
     padding: 0 1em 0 0;
 }
 
-nav div:nth-child(2) span a[href="contact"]{
+nav div:nth-child(2) span a[href="https://lifely.nl/en/contact/"]{
     background-color: var(--Background--grey);
     color: var(--grey--99);
     border: var(--grey--99) solid;
@@ -203,6 +208,7 @@ main, footer{
     margin: 0 auto;
 }
 
+/* deze lijn zit aan de zeikant van de pagina */
 .main-line {
     position: absolute;
     top: 0;
@@ -212,22 +218,23 @@ main, footer{
     border-left: 1px solid hsla(53,7%,76%,.5);
 }
 
-.Starting{
+/* hero section */
+.starting{
     background-color: white;
     position: relative;
     margin: var(--spacing--top);
     z-index: 1;
 }
 
-.Starting-Primary{
+.starting-primary{
     margin: var(--spacing--bottom);
 }
 
-.Starting-Primary h1{
+.starting-primary h1{
     margin-bottom: 1.2em;
 }
 
-.Starting-Secondary{
+.starting-secondary{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -235,14 +242,43 @@ main, footer{
 }
 
 #Schedule-button{
+    font-family: 'Aktiv-Bd', serif;
     background-color: var(--Accent--red);
-    color: var(--grey--20);
     border-radius: 5px;
     padding: 1em 2.5em;
     text-align: center;
+    animation-name: knipper-animation;
+	animation-duration: 3s;
+	animation-iteration-count: infinite;
+    cursor: pointer;
 }
-
-.Schedule{
+@keyframes knipper-animation {
+    0% {
+        
+    }
+    
+    25% {
+        
+        scale: 0.9;
+        
+    }
+    50% {
+       
+        scale: 1;
+        
+    }
+    75% {
+       
+        scale: 0.9;
+        
+    }
+    100% {
+       
+    }      
+}
+/* einde 1ste section */
+/* begin 2de section schdule */
+.schedule{
     color: var(--grey--50);
     margin: 0 0 2.5em 0;
     display: flex;
@@ -257,16 +293,16 @@ main, footer{
     z-index: 0;
 }
 
-.Schedule-Primary img{
+.schedule-primary img{
     display: none;
 }
 
-.Schedule h2{
-    font-family: 'Playfair Display', serif;
+.schedule h2{
+    font-family: 'playfair-RG', serif;
 }
 
-.Schedule span,
-.Schedule p{
+.schedule span,
+.schedule p{
     color: var(--grey--99);
 }
 
@@ -275,7 +311,7 @@ main, footer{
     position: relative;
     animation-name: planning;
     animation-duration: 0.5s;
-    animation-delay: 1.3s;
+    animation-delay: 1.5s;
 }
 
 @keyframes planning {
@@ -293,7 +329,7 @@ main, footer{
     }
 }
 
-.Schedule p{
+.schedule p{
     word-wrap: break-word;
     width: 15em;
     margin: auto
@@ -302,11 +338,11 @@ main, footer{
 /* main section:nth-child(2){
     opacity: 0;
 } */
-.Schedule-Primary{
+.schedule-primary{
     text-align: center;
 }
 
-.Schedule-Secondary{
+.schedule-secondary{
     text-align: center; 
 }
 
@@ -315,7 +351,8 @@ form {
     margin: auto;
     scale: 1;
 }
-
+/* einde 2de section */
+/* begin 3de section Dictionary/quote */
 main section:nth-child(3){
     display: flex;
     flex-wrap: wrap;
@@ -324,14 +361,15 @@ main section:nth-child(3){
     gap: 1.2em;
     
 }
-
+/* einde 3de section */
+/* begin 4de section steps*/
 main section:nth-child(4){
     display: flex;
     flex-wrap: wrap;
 }
 
 main section:nth-child(4) h2{
-    font-family: 'Playfair Display', serif;
+    font-family: 'playfair-RG', serif;
     color: var(--grey--50);
 
 }
@@ -377,7 +415,8 @@ main section:nth-child(4) ol::before{
     transition: height .1s ease-out;
 
 }
-
+/* einde 4de section */
+/* begin 5de section cases */
 main section:nth-child(5){
     overflow: hidden;
 }
@@ -385,14 +424,14 @@ main section:nth-child(5){
 main section:nth-child(5) article{
     display: flex;
     gap: 1em;
+    flex-direction: column;
 }
 
 
 main section:nth-child(5) h2{
-    font-family: 'Playfair Display', serif;
+    font-family: 'playfair-RG', serif;
     color: var(--grey--50);
-    z-index: 1;
-    grid-area: title;
+    text-align: center;
 
 }
 
@@ -462,14 +501,15 @@ main section:nth-child(5) div:last-child {
     height: 300px;
     padding: var(--spacing--sides);
 }
-
+/* einde section 5 */
+/* begin 6de section contact en related */
 main section:nth-child(6){
     background-color: var(--grey--20);
     margin: 0;
 }
 
 main section:nth-child(6) h2{
-    font-family: 'Playfair Display', serif;
+    font-family: 'playfair-RG', serif;
     color: var(--grey--70);
 }
 
@@ -497,9 +537,10 @@ main section:nth-child(6) div:last-child a{
     padding: 1em 2em;
     font-family: 'Aktiv-Bd';
 }
+/* einde 6de section */
 
 /* end main */
-
+/* footer */
 footer{
     background-color: var(--grey--99);
     color: var(--grey--20);
@@ -527,7 +568,7 @@ footer li span a{
         padding:var(--spacing--sides);
     }
 
-    .Starting-Secondary{
+    .starting-secondary{
         padding: var(--spacing--bottom);
     }
 
@@ -538,7 +579,7 @@ footer li span a{
     }
 
     main section:nth-child(4) h2 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'playfair-RG', serif;
         color: var(--grey--50);
         text-align: center;
     }
@@ -576,15 +617,15 @@ footer li span a{
         padding: 1em 4.5em;
     }
     
-    .Starting{
+    .starting{
         display: flex;
         flex-direction: row;
     }
 
-    .Starting-Primary{
+    .starting-primary{
         width: 50%;
     }
-    .Starting-Secondary{
+    .starting-secondary{
         width: 50%;
         display: flex;
         flex-direction: column;
@@ -592,30 +633,30 @@ footer li span a{
         align-items: center;
     }
 
-    .Starting-Secondary img{
+    .starting-secondary img{
         width: 70%;
     }
-    .Schedule{
+    .schedule{
         display: flex;
         flex-direction: column;
     }
     
-    .Schedule-content{
+    .schedule-content{
         display: flex;
         width: 100%;
     }
-    .Schedule-Primary{
+    .schedule-primary{
         display: block;
         width: 50%;
         margin: auto;
     }
     
-    .Schedule-Primary img{
+    .schedule-primary img{
         display: block;
         margin: auto;
     }
 
-    .Schedule-Secondary{
+    .schedule-secondary{
         display: flex;
     flex-direction: column;
     align-items: center;
@@ -628,7 +669,7 @@ footer li span a{
 
     h1 span{
         font-size: 1.8em;
-        font-family: 'Playfair Display', serif;
+        font-family: 'playfair-RG', serif;
         color: var(--grey--50);
     }
     
@@ -656,6 +697,11 @@ footer li span a{
         word-wrap: break-word;
         width: 30em
     }
+
+    main section:nth-child(5) article {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
 @media (min-width:76.875em) {
@@ -668,7 +714,7 @@ footer li span a{
 
     h1 span{
         font-size: 2.2em;
-        font-family: 'Playfair Display', serif;
+        font-family: 'playfair-RG', serif;
         color: var(--grey--50);
     }
     
@@ -691,13 +737,13 @@ footer li span a{
         scale: 1;
     };
 
-    .Starting-Primary h2,
-    .Starting-Primary p{
+    .starting-primary h2,
+    .starting-primary p{
         word-wrap: break-word;
         width: 15em
     }
 
-    .Schedule-Primary{
+    .schedule-primary{
         display: block;
         margin: auto;
     }
