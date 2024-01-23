@@ -201,6 +201,32 @@ nav div:nth-child(2) span a[href="https://lifely.nl/en/contact/"]{
     font-weight: bold;   
 }
 
+body > article{
+    background-color: var(--grey--99);
+    position: fixed;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin: var(--spacing--top);
+    transform: translateX(-100%);
+    transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
+    padding: 1em;
+}
+
+.show-menu{
+    transform: translateX(0%);
+}
+
+body > article ul li a{
+    color: var(--grey--20);
+}
+
+body > article div:last-child ul{
+    color: var(--grey--20);
+    display: flex;
+    justify-content: space-around;
+}
+
 /* main */
 main, footer{
     padding: 1em;
@@ -251,6 +277,7 @@ main, footer{
 	animation-duration: 3s;
 	animation-iteration-count: infinite;
     cursor: pointer;
+    color: var(--Background--grey);
 }
 @keyframes knipper-animation {
     0% {
@@ -288,7 +315,7 @@ main, footer{
     opacity: 1;
     padding: var(--background--padding);
     transform: translateY(-1600px);
-    transition: 2s cubic-bezier(0, 0.91, 1, 1);
+    transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
     position: absolute;
     z-index: 0;
 }
@@ -311,7 +338,7 @@ main, footer{
     position: relative;
     animation-name: planning;
     animation-duration: 0.5s;
-    animation-delay: 1.5s;
+    animation-delay: 0.5s;
 }
 
 @keyframes planning {
@@ -611,6 +638,20 @@ footer li span a{
 }
 
 @media (min-width:50em) {
+    body > article{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    body > article div:last-child ul{
+        color: var(--grey--20);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     main, footer{
         padding: 1em;
         max-width: 100%;
