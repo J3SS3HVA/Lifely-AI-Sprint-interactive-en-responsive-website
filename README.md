@@ -16,7 +16,7 @@
 
 [kenmerken](https://github.com/J3SS3HVA/the-startup-responsive-interactieve-website/tree/main?tab=readme-ov-file#kenmerken)
 
-[checklist]()
+[checklist](https://github.com/J3SS3HVA/the-startup-responsive-interactieve-website/blob/main/README.md#checklist)
 
 ## Opdracht gever
 De opdracht gever voor ons project van sprint 6 is Jesse de Vries (Lead Developer bij Lifely)
@@ -76,7 +76,19 @@ De structuur in mijn html is over het algemeen hetzelfde als elk ander project. 
 
 ## Checklist
 
+Voor dit project zijn alle belangrijke dingen verwerkt in mijn project
 
+✅
+. Volledige mobile first pagina
+. Responsive voor alle formaten
+. styling
+. Belangrijke interacties (menu, schedule)
+
+Helaas is niet alles wat ik wil in dit project af, gellukig zijn het onderdelen die niet een must of should have zijn
+
+❌
+. main line wel in webpagina maar niet 100% responsive
+. 1 interactie die ik wilde maken waarbij de 2 case section in een mini carousel komen
 
 ## Licentie
 
