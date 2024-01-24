@@ -47,7 +47,6 @@ body {
   font-family: "Aktiv-Rg", sans-serif;
   line-height: var(--standard--line-height);
   position: relative;
-  overflow-x: hidden;
 }
 
 .hide-scroll {
@@ -177,7 +176,7 @@ nav div:nth-child(1) span:nth-child(4) {
 nav div:nth-child(2) {
   gap: 0.5em;
   white-space: nowrap;
-  margin: 0 1em 0 1em;
+  margin: 0 0 0 1em;
   padding: 0 1em 0 0;
 }
 
@@ -299,11 +298,11 @@ footer {
   align-content: center;
   align-items: center;
   opacity: 1;
-  padding: var(--background--padding);
   transform: translateY(-1600px);
   transition: all 500ms cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
   position: absolute;
   z-index: 0;
+  padding: 0;
 }
 
 .schedule-primary img {
